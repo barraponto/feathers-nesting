@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/nesting",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "oFGvNCcuVB2iE+qc1X1Ls0LXpw2lkh1xz7j+vQDy3V0D6NGwl6CIxzf0LnGH8EABxp+kfNQOTH+1asotwoRz7g=="
+    },
+    "local": {}
+  }
+}
