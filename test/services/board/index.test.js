@@ -5,6 +5,7 @@ const app = require('../../../src/app');
 
 const chai = require('chai');
 chai.use(require('chai-http'));
+var should = chai.should();
 
 describe('board service', function() {
     it('registered the boards service', () => {
@@ -15,10 +16,15 @@ describe('board service', function() {
             .post('/boards')
             .set('Accept', 'application/json')
             .send({
-                text: 'This is a new board'
+                text: 'This is a new board',
+                cards: [
+                  {text: 'Card A'},
+                  {text: 'Card B'},
+                ]
             })
             .end((err, res) => {
-                console.log(res.body);
+              console.log(res.body);
+                res.body.text.should.equal('This is a new board');
                 done();
             });
     });
