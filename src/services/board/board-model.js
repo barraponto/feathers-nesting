@@ -1,7 +1,7 @@
 'use strict';
 
 // board-model.js - A mongoose model
-// 
+//
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 
@@ -11,7 +11,8 @@ const Schema = mongoose.Schema;
 const boardSchema = new Schema({
   text: { type: String, required: true },
   createdAt: { type: Date, 'default': Date.now },
-  updatedAt: { type: Date, 'default': Date.now }
+  updatedAt: { type: Date, 'default': Date.now },
+  cards: [{ type: Schema.Types.ObjectId, ref: 'card'}]
 });
 
 const boardModel = mongoose.model('board', boardSchema);
