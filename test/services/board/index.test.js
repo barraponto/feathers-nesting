@@ -23,7 +23,6 @@ describe('board service', function() {
                 ]
             })
             .end((err, res) => {
-              console.log(res.body);
                 res.body.text.should.equal('This is a new board');
                 done();
             });

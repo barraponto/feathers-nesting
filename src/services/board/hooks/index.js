@@ -9,7 +9,7 @@ const prepopulateBoard = function(hook){
   if (hook.data.cards) {
     // make a promise for every card in hook.data
     const cardPromises = hook.data.cards.map(data => {
-      card.create(data)
+      return card.create(data)
     });
     // when all promises resolve, update hook.data
     return Promise.all(cardPromises).then(cards => {
