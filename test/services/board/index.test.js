@@ -24,6 +24,7 @@ describe('board service', function() {
             })
             .end((err, res) => {
                 res.body.text.should.equal('This is a new board');
+                res.body.cards.length.should.equal(2);
                 done();
             });
     });
